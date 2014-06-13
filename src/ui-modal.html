@@ -1,0 +1,9 @@
+<polymer-element name="ui-modal" attributes="" on-click="{{hide}}" on-transitionend="{{displayAnimation}}" on-webkitTransitionEnd="{{displayAnimation}}" offscreen hide>
+<template>
+  <link rel="stylesheet" type="text/css" href="./ui-modal.less">
+  <section id="display" hide>
+    <content></content>
+  </section>
+</template>
+<script src="./ui-modal.litcoffee"></script>
+</polymer-element>
