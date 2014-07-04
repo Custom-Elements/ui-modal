@@ -10,7 +10,7 @@
   right: 0;
   height: 100%;
   z-index: 999999;
-  background-color: fade(#000, 85%);
+  background-color: fade(@black, @faded);
   opacity: 1.0;
   .transition(opacity @transition);
 }
@@ -28,8 +28,7 @@
   max-height: 50%;
   background-color: @white;
   padding: 1em;
-  .box-shadow(0px 0px 3px 3px @black,
-   0px 0px 1px 1px @black inset;);
+  .box-shadow(0px 4px 1em fade(@black, @faded));
   opacity: 1.0;
   .transition(@transition);
   .transform(scale(1.0, 1.0));
@@ -39,4 +38,3 @@
   opacity: 0 !important;
   .transform(scale(0.5, 0.5));
 }
-
