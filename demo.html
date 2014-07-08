@@ -6,26 +6,30 @@
     <script src="http://localhost:35729/livereload.js"></script>
     <script src="node_modules/polymer/platform.js"></script>
     <link rel="import" href="node_modules/polymer/polymer.html">
-    <link rel="import" href="build/ui-modal.html">
+    <link rel="import" href="src/ui-modal.html">
     <link rel="stylesheet" href="node_modules/ui-styles/ui-styles.less">
     <style>
       body {
         font-family: "Helvetica Neue", "Helvetica", Arial;
       }
+      well {
+        max-width: 32em;
+      }
     </style>
   </head>
   <body unresolved>
     <p>Click for a dialog</p>
-    <div id="holder">
       <ui-modal>
-      <h4>Clicking To Dismiss</h4>
-      <hr>
-      <p>
-        Yes, this is just content to put in folks face, and by default if
-        a click bubbles through it -- bye!
-      </p>
-      </ui-modal>
-    </div>
+      <heading>
+        <h4>Clicking To Dismiss</h4>
+      </heading>
+      <well>
+        <p>
+          Yes, this is just content to put in folks face, and by default if
+          a click bubbles through it -- bye!
+        </p>
+        </ui-modal>
+      </well>
     <script>
       document.addEventListener('polymer-ready', function() {
         //poke your element here

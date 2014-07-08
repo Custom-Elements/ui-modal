@@ -1,7 +1,11 @@
-<polymer-element name="ui-modal" attributes="" on-click="{{hide}}" on-transitionend="{{displayAnimation}}" on-webkitTransitionEnd="{{displayAnimation}}" offscreen hide>
+<polymer-element name="ui-modal" attributes=""
+  on-click="{{hide}}"
+  on-transitionend="{{backgroundAnimation}}"
+  on-animationend="{{displayAnimation}}"
+  offscreen hide>
 <template>
   <link rel="stylesheet" type="text/css" href="./ui-modal.less">
-  <section id="display" hide>
+  <section id="display">
     <content></content>
   </section>
 </template>
