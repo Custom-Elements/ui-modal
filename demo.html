@@ -12,29 +12,28 @@
       body {
         font-family: "Helvetica Neue", "Helvetica", Arial;
       }
-      well {
-        max-width: 32em;
-      }
-    </style>
+  </style>
   </head>
-  <body unresolved>
-    <p>Click for a dialog</p>
+  <body unresolved container>
+    <a id="dialog">Click for a dialog</a>
       <ui-modal>
-      <heading>
-        <h4>Clicking To Dismiss</h4>
-      </heading>
-      <well>
+        <header>
+          <h4>Clicking To Dismiss</h4>
+        </header>
         <p>
           Yes, this is just content to put in folks face, and by default if
           a click bubbles through it -- bye!
         </p>
-        </ui-modal>
-      </well>
+        <footer>
+          <a>OK</a>
+          <a>Cancel</a>
+        </footer>
+      </ui-modal>
     <script>
       document.addEventListener('polymer-ready', function() {
         //poke your element here
       })
-      document.addEventListener('click', function() {
+      document.querySelector("#dialog").addEventListener('click', function() {
         document.querySelector('ui-modal').show()
       })
     </script>

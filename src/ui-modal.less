@@ -11,7 +11,7 @@
   right: 0;
   height: 100%;
   z-index: 999999;
-  background-color: fade(@black, @faded);
+  //background-color: fade(@black, @faded);
   opacity: 1.0;
   .transition(opacity @transition);
 }
@@ -25,8 +25,12 @@
 }
 
 #display {
-  max-width: 50%;
+  padding: 1em;
+  max-width: 40em;
   max-height: 50%;
   background-color: @white;
-  .box-shadow(0px 4px 1em fade(@black, @faded));
+  @shadows: 0px 6px 20px fade(@black, @justahint),
+    0px 8px 17px fade(@black, @disabled),
+    0px 0px 1px -1px fade(@black, @faded) inset;
+  .box-shadow(@shadows);
 }
