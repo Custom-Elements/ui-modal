@@ -32,7 +32,6 @@ The animation is two parts, background and content. The order of transition
 animation is different whether you show or hide.
 
       backgroundAnimation: (evt) ->
-        console.log 'transition', evt
         if @showing
           @$.display.setAttribute 'slideup', ''
         if @hiding
