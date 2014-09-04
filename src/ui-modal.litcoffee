@@ -26,6 +26,9 @@ A very simple full screen modal that can hold any content.
         @hiding = true
         evt?.stopPropagation()
 
+      backgroundClick: (evt) ->
+        return if @['ignore-background-click']?
+        @hide(evt)
 
 ##Event Handlers
 The animation is two parts, background and content. The order of transition
@@ -40,7 +43,6 @@ animation is different whether you show or hide.
           @fire 'hidden'
 
       displayAnimation: (evt) ->
-        console.log 'animation', evt
         if @showing
           @$.display.removeAttribute 'offscreen'
           @$.display.removeAttribute 'slideup'
@@ -56,6 +58,9 @@ animation is different whether you show or hide.
       created: ->
 
       ready: ->
+        if @['show-background']?
+          @style.backgroundColor = 'rgba(51, 51, 51, 0.61)'
+
 
 Polymer doesn't understand declarative binding for animation events, so manual
 binding here.
@@ -64,5 +69,11 @@ binding here.
         @addEventListener 'webkitAnimationEnd', (evt) => @displayAnimation evt
 
       domReady: ->
+        hides = @querySelectorAll('[hide-modal]')
+        i=0
+        while i<hides.length
+          hides[i].addEventListener 'click', (evt) =>
+            @hide(evt)
+          i++
 
       detached: ->

@@ -1,5 +1,5 @@
-<polymer-element name="ui-modal" attributes=""
-  on-click="{{hide}}"
+<polymer-element name="ui-modal" attributes="show-background ignore-background-click"
+  on-click="{{backgroundClick}}"
   on-transitionend="{{backgroundAnimation}}"
   on-animationend="{{displayAnimation}}"
   offscreen hide>
