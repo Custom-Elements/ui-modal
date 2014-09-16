@@ -16,7 +16,7 @@
   </head>
   <body unresolved container>
     <a id="dialog">Click for a dialog</a>
-      <ui-modal>
+      <ui-modal show-background ignore-background-click>
         <header>
           <h4>Clicking To Dismiss</h4>
         </header>
@@ -25,8 +25,8 @@
           a click bubbles through it -- bye!
         </p>
         <footer>
-          <a>OK</a>
-          <a>Cancel</a>
+          <a hide-modal>OK</a>
+          <a hide-modal>Cancel</a>
         </footer>
       </ui-modal>
     <script>

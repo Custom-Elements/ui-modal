@@ -1,9 +1,9 @@
-<polymer-element name="ui-modal" attributes=""
-  on-click="{{hide}}"
+<polymer-element name="ui-modal" attributes="show-background ignore-background-click"
+  on-click="{{backgroundClick}}"
   offscreen>
 <template>
   <link rel="stylesheet" type="text/css" href="./ui-modal.less">
-  <section id="display">
+  <section id="display" offscreen>
     <content></content>
   </section>
 </template>
