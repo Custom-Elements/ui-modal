@@ -50,7 +50,7 @@ A very simple full screen modal that can hold any content.
           ], duration: 100
           anim.onfinish = =>
             @setAttribute 'offscreen', ''
-        evt.stopPropagation()
+        evt?.stopPropagation()
 
       backgroundClick: (evt) ->
         return if @['ignore-background-click']?
